@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+        - name: node-app
+          image: admin726/node-mongo-db:03
+          ports:
+            - containerPort: 3000
+          env:
+            - name: MONGO_HOST
+              value: "service-mongodb"  # Fixed: Using direct value instead of valueFrom
+            - name: MONGO_PORT
+              value: "27017"  # Fixed: Using direct value instead of valueFrom
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-node-app
+spec:
+  selector:
+    app: node-app
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 3000
+  type: LoadBalancer  # Fixed incorrect type name
+
+
+
