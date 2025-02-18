@@ -1,9 +1,9 @@
-# Kubernetes-Email-Storage-with-MongoDB-Node.js-Web-UI
+# 📌Kubernetes-Email-Storage-with-MongoDB-Node.js-Web-UI
  
  This project demonstrates how to deploy a full-stack email storage application using Kubernetes, Docker, and MongoDB. The application consists of a Node.js Web UI for interacting with a MongoDB database that stores email addresses. The project uses Kubernetes to manage the deployment, scaling, and data persistence of the containers.
  
 
-# Features:-
+# 📂Features:-
 
 Node.js Web UI that provides a simple interface to add and view emails.
 MongoDB as the database to store email addresses.
@@ -13,14 +13,14 @@ Two Deployment Strategies:-
 * Single Pod Deployment:- Running both Node.js and MongoDB containers in the same pod.
 * Separate Pods: Running Node.js and MongoDB containers in separate pods, offering more flexibility and scalability.
 
-# Technologies Used:-
+# 🛠️Technologies Used:-
 Kubernetes for container orchestration, managing Pods, Deployments, Services, and storage.
 Docker for creating and running containerized applications (Node.js Web UI and MongoDB).
 Minikube for running a local Kubernetes cluster.
 MongoDB as the database to store email addresses.
 Node.js (Express.js) for the backend API to manage email-related operations.
 
-# Kubernetes YAML Files:-
+# 📂Kubernetes YAML Files:-
 This project uses the following Kubernetes resources to deploy and configure the application:
 
 1. PersistentVolume (PV) & PersistentVolumeClaim (PVC).
@@ -44,7 +44,7 @@ This project uses the following Kubernetes resources to deploy and configure the
 * Node.js Service: This service exposes the Node.js Web UI container. It is defined with the LoadBalancer type, which allows the service to be accessed externally. The Node.js Web UI interacts with MongoDB through the ClusterIP service defined earlier.
 
 
-# How to Run Locally:
+# 🛠️How to Run Locally:
 
 1. Clone this repository:
 
@@ -63,7 +63,7 @@ This project uses the following Kubernetes resources to deploy and configure the
 
 * kubectl get svc service-node-app
 
-# Project Summary
+# 📖Project Summary
 
 This project demonstrates how to deploy a full-stack email storage application using Kubernetes, Docker, and MongoDB. It features a Node.js Web UI that allows users to submit and retrieve emails stored in a MongoDB database. The deployment supports persistent storage, ensuring data remains intact across restarts using PersistentVolumes (PV) and PersistentVolumeClaims (PVC). The project explores two deployment strategies: running both containers in the same pod and in separate pods, providing insights into different Kubernetes architectures. This setup is ideal for learning container orchestration, database persistence, and cloud-native application deployment. 🚀
 
